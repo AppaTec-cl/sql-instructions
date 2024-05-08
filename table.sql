@@ -1,11 +1,11 @@
 create table usuario (
-    id_usario int(5) PRIMARY KEY,
+    id_uusario int(5) PRIMARY KEY,
     rut varchar(10),
     nombre varchar(40),
     apellido_p varchar(20),
     apellido_m varchar(20),
     email varchar(100),
-    password varchar(12),
+    password BLOB,
     rol varchar(35)
     );
 
@@ -18,7 +18,7 @@ create table contrato (
     contenido_contrato LONGBLOB,
     estado varchar(15),
     comentario varchar(500),
-    FOREIGN KEY(id_usuario_trabajador) references usuario(id_usario)
+    FOREIGN KEY(id_usuario_trabajador) references usuario(id_usuario)
 );
 
 create table historial_contrato (
