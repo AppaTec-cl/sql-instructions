@@ -1,7 +1,7 @@
 create table usuario (
-    id_uusario int(5) PRIMARY KEY,
+    id_usuario int(5) PRIMARY KEY,
     rut varchar(10),
-    nombre varchar(40),
+    nombres varchar(50),
     apellido_p varchar(20),
     apellido_m varchar(20),
     email varchar(100),
@@ -23,9 +23,30 @@ create table contrato (
 
 create table historial_contrato (
     id_historial_contrato int(5) PRIMARY KEY,
-    id_contrato int(5),
+    id_usuario int(5),
     estado_anterior varchar(15),
     estado_nuevo varchar(15),
     fecha_cambio date,
-    foreign key(id_contrato) references contrato(id_contrato)
+    foreign key(id_usuario) references usuario(id_usuario)
 );
+
+CREATE TABLE contenido_contrato (
+    id_cc INT(5) PRIMARY KEY, 
+    id_contrato INT(5), 
+    rut VARCHAR(10), 
+    nombres VARCHAR(50), 
+    apellido_p VARCHAR(20), 
+    apellido_m VARCHAR(20), 
+    direccion VARCHAR(50), 
+    estado_civil VARCHAR(15), 
+    tipo_cargo VARCHAR(25), 
+    inicio_contrato DATE, 
+    finalizacion_contrato DATE, 
+    provision_afp VARCHAR(15), 
+    nacionalidad VARCHAR(15), 
+    correo_electronico VARCHAR(100), 
+    fecha_nacimiento DATE, 
+    sistema_salud VARCHAR(15), 
+    sueldo INT(10), 
+    foreign key(id_contrato) references contrato(id_contrato)
+); 
