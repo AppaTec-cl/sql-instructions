@@ -4,7 +4,7 @@ create table usuario (
     nombres varchar(50),
     apellido_p varchar(20),
     apellido_m varchar(20),
-    email varchar(100),
+    correo_electronico varchar(100),
     password BLOB,
     rol varchar(35)
     );
